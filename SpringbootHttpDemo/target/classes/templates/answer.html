@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>查询结果</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+</head>
+<body class="container" th:style="'background-image: url(/css/img/background.jpeg)'">
+<br/>
+<h2>查询结果</h2>
+<br/><br/>
+<div class="with:80%">
+    <table class="table table-hover">
+        <tbody>
+        <h4>查询地区为：</h4>
+        <tr th:each="se:${result}">
+            <td th:text="${se.area_1}"></td>
+            <td th:text="${se.area_2}"></td>
+            <td th:text="${se.area_3}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <table class="table table-hover">
+        <tbody>
+        <h4>当前数据</h4>
+        <tr>
+            <th>日期</th>
+            <th>温度</th>
+            <th>天气</th>
+            <th>风向</th>
+        </tr>
+        <tr th:each="ser:${realtime}">
+            <td th:text="${ser.week}">日期</td>
+            <td th:text="${ser.wtTemp}">温度</td>
+            <td th:text="${ser.wtNm}">天气</td>
+            <td th:text="${ser.wtWindNm}">风向</td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="table table-hover">
+        <tbody>
+        <h4>今天数据</h4>
+        <tr>
+            <th>天气</th>
+            <th>最高温度</th>
+            <th>最低温度</th>
+            <th>风力</th>
+            <th>日出</th>
+            <th>日落</th>
+
+        </tr>
+
+        <tr th:each="today:${toDay}">
+            <td th:text="${today.wtNm1}"></td>
+            <td th:text="${today.wtTemp1}"></td>
+            <td th:text="${today.wtTemp2}"></td>
+            <td th:text="${today.wtWinpNm1}"></td>
+            <td th:text="${today.wtSunr}"></td>
+            <td th:text="${today.wtSuns}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="table table-hover">
+        <tbody>
+        <h4>未来十时数据</h4>
+        <th>时间</th>
+        <th>天气</th>
+        <th>温度</th>
+        <th>风向</th>
+        <th>风力</th>
+
+
+        <tr th:each="futureHour:${futureHour}">
+            <td th:text="${futureHour.dateYmdh}"></td>
+            <td th:text="${futureHour.wtNm}"></td>
+            <td th:text="${futureHour.wtTemp}"></td>
+            <td th:text="${futureHour.wtWindNm}"></td>
+            <td th:text="${futureHour.wtWinpNm}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/}" class="btn btn-info col-2">回退</a>
+</div>
+</body>
+</html>

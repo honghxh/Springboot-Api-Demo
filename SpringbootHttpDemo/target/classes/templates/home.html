@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>查询</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <!--    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/sign-in/">-->
+    <!-- Bootstrap core CSS -->
+    <!--    <link rel="stylesheet" th:href ="@{/css/signin.css}"  type="text/css">-->
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+
+
+    </style>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" th:href="@{/css/signin.css}" type="text/css">
+
+</head>
+<body class="text-center">
+
+<form class="form-signin" th:action="@{/find}" method="GET">
+    <h1 class="h3 mb-3 font-weight-normal">输入查询天气的城市</h1>
+    <label for="inputCity" class="sr-only"></label>
+    <input type="text" name="city" id="inputCity" class="form-control" placeholder="city" required autofocus>
+    <button type="submit" class="btn btn-info">查询</button>
+</form>
+
+
+</body>
+</html>
